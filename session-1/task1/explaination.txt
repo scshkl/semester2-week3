@@ -1,0 +1,23 @@
+This output shows that you are using Python 3.12 or newer, as it includes recent optimizations to the CPython interpreter.
+
+Each line represents an operation on the virtual stack: 
+
+RESUME: A no-op instruction used for internal bookkeeping. It marks the start of a function or a 
+point where execution resumes (like after a yield).
+
+LOAD_GLOBAL (NULL + print): Searches for the print function in the global namespace. 
+The NULL + part is an optimization that pushes a NULL value onto the stack before the function, 
+which helps Python distinguish between regular function calls and method calls.
+
+LOAD_CONST ('Hello'): Pushes the literal string 'Hello' onto the top of the stack.
+
+CALL 1: Pops the argument ('Hello') and the function (print) from the stack, executes the call, 
+and pushes the result back up. The 1 indicates there is one positional argument.
+
+POP_TOP: Since you didn't assign the result of print() to a variable, this instruction
+removes the returned value (None) from the stack.
+
+RETURN_CONST (None): A specialized instruction added in Python 3.12 that combines 
+loading the constant None and returning it in a single step. 
+
+https://docs.python.org/2/library/dis.html#python-bytecode-instructions
