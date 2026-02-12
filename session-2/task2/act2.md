@@ -12,7 +12,7 @@ Does the output match what you expect based on the machine architecture?
 
 Extend the program to output data about a double pointer:
 - Do you expect the size to change?
-- Why?
+- Why?  A: the size of pointers depends on the architecture
 
 2. **Pointer operators**
 
